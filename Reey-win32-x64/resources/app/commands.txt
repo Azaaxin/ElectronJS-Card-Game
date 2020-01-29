@@ -1,0 +1,1 @@
+electron-packager C:\Users\Ludvi\Desktop\projecto Reey --platform=win32

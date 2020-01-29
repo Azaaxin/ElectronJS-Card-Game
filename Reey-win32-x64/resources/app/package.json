@@ -1,0 +1,42 @@
+{
+  "name": "Reey",
+  "version": "1.0.0",
+  "description": "A minimal Electron application",
+  "main": "main.js",
+  "scripts": {
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder"
+  },
+  "repository": "Invalid",
+  "keywords": [
+    "Electron",
+    "quick",
+    "start",
+    "tutorial",
+    "demo"
+  ],
+  "author": "GitHub",
+  "license": "CC0-1.0",
+  "devDependencies": {
+    "electron": "^7.1.10"
+  },
+  "build": {
+    "productName": "Reey",
+    "win": {
+      "target": [
+        "portable"
+      ]
+    },
+    "portable": {
+      "artifactName": "Reey.exe"
+    },
+    "directories": {
+      "output": "electron/output",
+      "app": "electron/app",
+      "buildResources": "electron/buildResources"
+    }
+  },
+  "dependencies": {
+    "jQuery": "^1.7.4"
+  }
+}

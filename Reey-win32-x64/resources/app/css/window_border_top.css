@@ -1,0 +1,10 @@
+body{margin:0px;}
+.window_border_top{
+    position: relative;
+    top: 0px;
+    height: 30px;
+    width: 100%;
+    background-color: rgb(48, 48, 48);
+    -webkit-user-select: none;
+    -webkit-app-region: drag;
+}

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="scripts/blockamount.js"></script>
+        <meta charset="utf-8">
+        <title>My Electron Frameless Window</title>
+        <style>
+            body {
+                padding: 0px;
+                margin: 0px;
+            }
+
+            #title-bar {
+                -webkit-app-region: drag;
+                height: 40px;
+                text-align: center;
+                line-height: 40px;
+                vertical-align: middle;
+                background-color: #494949;
+                padding: none;
+                margin: 0px;
+				
+            }
+
+            #title {
+                position: fixed;
+                top: 0px;
+                left: 6px;
+                color:white;
+
+            }
+
+            #title-bar-btns {
+                -webkit-app-region: no-drag;
+                position: fixed;
+                top: 0px;
+                right: 6px;
+            }
+			* {
+    box-sizing: border-box;
+  }
+body{
+  background-color: #1d1e22;
+}
+  .wrapper {
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 0 20px;
+    width: 100%; 
+    display: grid;
+    grid-auto-rows: 100px; 
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); 
+    grid-gap: 1em;
+  }
+  
+  .diavo {
+    border-radius: 10px;
+    padding: 20px;
+    color: #fff;
+  }
+.diavo:hover {
+    box-shadow: 0 0 10px purple;
+  }
+  
+  .diavo:nth-child(odd) {
+    background-color: #55BBE9;
+  }
+  
+  .diavo:nth-child(even) {
+    background-color: #afbe29;
+  } 
+  .nav-btn-xe{
+    cursor: pointer;
+    padding: 27px 36px 6px 0px;
+    margin: 0px;
+    border: 3px solid transparent;
+    outline: none;
+    background-color: rgba(0, 0, 0, 0);
+    transition: .3s;
+  }
+  .nav-btn-xe:hover{
+    cursor: pointer;
+    padding: 27px 36px 6px 0px;
+    margin: 0px;
+    border: 3px solid transparent;
+    outline: none;
+    filter: invert(75%);
+  }
+  .nav-btn-xe:nth-child(1){
+    background: url(content/min-btn.svg) no-repeat scroll;
+    background-size: 14px 36px;
+    background-position: center;
+  }
+  .nav-btn-xe:nth-child(2){
+    background: url(content/max-btn.svg) no-repeat scroll;
+    background-size: 14px 15px;
+    background-position: center;
+  }
+  .nav-btn-xe:nth-child(3){
+    background: url(content/end-btn.svg) no-repeat scroll;
+    background-size: 14px 36px;
+    background-position: center;
+  }
+        </style>
+		<script>window.$ = window.jQuery = require('scripts/jquery-3.0.0.min.js');</script>
+
+    </head>
+    <body>
+        <div id="title-bar">
+             <div id="title">
+                Blocks
+             </div>
+             <div id="title-bar-btns">
+                  <button class="nav-btn-xe" id="min-btn"></button>
+                  <button class="nav-btn-xe" id="max-btn"></button>
+                  <button class="nav-btn-xe" id="close-btn"></button>
+             </div>
+        </div>
+			<div class="wrapper">
+           <div class="diavo">1</div>
+           <div class="diavo">2</div>
+           <div class="diavo">3</div>
+           <div class="diavo">4</div>
+           <div class="diavo">5</div>
+           <div class="diavo">6</div>
+           <div class="diavo">7</div>
+           <div class="diavo">8</div>
+           <div class="diavo">9</div>
+           <div class="diavo">10</div>
+       </div>
+        <script>
+        (function () {
+            // Retrieve remote BrowserWindow
+            const {BrowserWindow} = require('electron').remote
+
+            function init() {
+                // Minimize task
+                document.getElementById("min-btn").addEventListener("click", (e) => {
+                    var window = BrowserWindow.getFocusedWindow();
+                    window.minimize();
+                });
+
+                // Maximize window
+                document.getElementById("max-btn").addEventListener("click", (e) => {
+                    var window = BrowserWindow.getFocusedWindow();
+                    if(window.isMaximized()){
+                        window.unmaximize();
+                    }else{
+                        window.maximize();
+                    }
+                });
+
+                // Close app
+                document.getElementById("close-btn").addEventListener("click", (e) => {
+                    var window = BrowserWindow.getFocusedWindow();
+                    window.close();
+                });
+            };
+
+            document.onreadystatechange =  () => {
+                if (document.readyState == "complete") {
+                    init();
+                }
+            };
+        })();
+        </script>
+    </body>
+</html>

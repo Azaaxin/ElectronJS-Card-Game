@@ -1,0 +1,29 @@
+{
+  "name": "Reey",
+  "version": "1.0.0",
+  "description": "A minimal Electron application",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "repository": "Invalid",
+  "keywords": [
+    "Electron",
+    "quick",
+    "start",
+    "tutorial",
+    "demo"
+  ],
+  "author": "GitHub",
+  "license": "CC0-1.0",
+  "devDependencies": {
+    "electron": "^7.1.9"
+  },
+  "scripts": {
+  "pack": "electron-builder --dir",
+  "dist": "electron-builder",
+  "electron": "electron",
+  "electron-build": "ng build --prod && npm run electron"
+}
+}
+
