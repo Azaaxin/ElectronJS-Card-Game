@@ -1,11 +1,16 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <script src="scripts/jquery-3.4.1.min.js"></script>
         <script src="scripts/blockamount.js"></script>
         <link rel="stylesheet" href="css/window_settings.css">
-        <script src="scripts/window_settings.js"></script>
-        <link rel="import" href="template/gameboard.html">
+        <script src="scripts/importer.js"></script>
               <title>My Electron Frameless Window</title>
-
+        </head>
+    <body>
+        <div loaded="template/window_settings.html"></div> 
+        <div loaded="template/gameboard.html"></div> 
+        
+        <script>includeHTML();</script>
     </body>
 </html>
