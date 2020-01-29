@@ -1,0 +1,63 @@
+        <style>
+            body {
+                background-color: #1d1e22;
+            }
+
+            .wrapper {
+                max-width: 1200px;
+                margin: 30px auto;
+                padding: 0 20px;
+                width: 100%;
+                display: grid;
+                grid-auto-rows: 100px;
+                grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+                grid-gap: 1em;
+            }
+
+            .diavo {
+                border-radius: 10px;
+                padding: 20px;
+                color: #fff;
+            }
+
+            .diavo:hover {
+                box-shadow: 0 0 10px purple;
+            }
+
+            .diavo:nth-child(odd) {
+                background-color: #55BBE9;
+            }
+
+            .diavo:nth-child(even) {
+                background-color: #afbe29;
+            }
+        </style>
+        <script>
+            window.$ = window.jQuery = require('scripts/jquery-3.0.0.min.js');
+        </script>
+
+        </head>
+
+        <body>
+            <div id="title-bar">
+                <div id="title">
+                    Blocks
+                </div>
+                <div id="title-bar-btns">
+                    <button class="nav-btn-xe" id="min-btn"></button>
+                    <button class="nav-btn-xe" id="max-btn"></button>
+                    <button class="nav-btn-xe" id="close-btn"></button>
+                </div>
+            </div>
+            <div class="wrapper">
+                <div class="diavo">1</div>
+                <div class="diavo">2</div>
+                <div class="diavo">3</div>
+                <div class="diavo">4</div>
+                <div class="diavo">5</div>
+                <div class="diavo">6</div>
+                <div class="diavo">7</div>
+                <div class="diavo">8</div>
+                <div class="diavo">9</div>
+                <div class="diavo">10</div>
+            </div>

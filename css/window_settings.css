@@ -1,0 +1,72 @@
+body {
+    padding: 0px;
+    margin: 0px;
+}
+
+#title-bar {
+    -webkit-app-region: drag;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    vertical-align: middle;
+    background-color: #494949;
+    padding: none;
+    margin: 0px;
+
+}
+
+#title {
+    position: fixed;
+    top: 0px;
+    left: 6px;
+    color: white;
+
+}
+
+#title-bar-btns {
+    -webkit-app-region: no-drag;
+    position: fixed;
+    top: 0px;
+    right: 6px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.nav-btn-xe {
+    cursor: pointer;
+    padding: 27px 36px 6px 0px;
+    margin: 0px;
+    border: 3px solid transparent;
+    outline: none;
+    background-color: rgba(0, 0, 0, 0);
+    transition: .3s;
+}
+
+.nav-btn-xe:hover {
+    cursor: pointer;
+    padding: 27px 36px 6px 0px;
+    margin: 0px;
+    border: 3px solid transparent;
+    outline: none;
+    filter: invert(75%);
+}
+
+.nav-btn-xe:nth-child(1) {
+    background: url(../content/min-btn.svg) no-repeat scroll;
+    background-size: 14px 36px;
+    background-position: center;
+}
+
+.nav-btn-xe:nth-child(2) {
+    background: url(../content/max-btn.svg) no-repeat scroll;
+    background-size: 14px 15px;
+    background-position: center;
+}
+
+.nav-btn-xe:nth-child(3) {
+    background: url(../content/end-btn.svg) no-repeat scroll;
+    background-size: 14px 36px;
+    background-position: center;
+}
