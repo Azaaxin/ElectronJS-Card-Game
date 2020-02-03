@@ -1,7 +1,19 @@
 var level = 0;
+var difficulty = 0;
 function initiate(){
-    level = 9;
+    calc_difficulty();
+    console.log(level);
     make_playground();
+    randomized();
+    console.log(difficulty);
+}
+function calc_difficulty(){
+    if (level < 9){
+        level = 9;
+    }
+    difficulty = (35/100) * level + difficulty;
+    difficulty = Math.round(difficulty)
+    console.log(difficulty + "DIFF");
 }
 function make_playground(){
     //Loop out cards on the playground
@@ -10,6 +22,8 @@ function make_playground(){
         var div = document.createElement('div');
         div.textContent = i;
         div.setAttribute('class', 'card');
+        div.setAttribute('id', i);
+        div.setAttribute('onClick', 'reply_click(this.id)');
         document.getElementById("wrapper").appendChild(div);
     }
 }
@@ -17,20 +31,26 @@ function clear_playground(){
     document.getElementById("wrapper").innerHTML = "";
 }
 
+function randomized(){
+    var play_array = [];
+        while(play_array.length < difficulty){
+            var randoms = Math.floor(Math.random() * level) + 1;
+            if(play_array.indexOf(randoms) === -1){ 
+                play_array.push(randoms);
+            }
+        }
+console.log(play_array);
+}
 /*
 concept:
-            <div id="1" class="card" onClick="reply_click(this.id)">1</div>
-            <div id="2" class="card" onClick="reply_click(this.id)">2</div>
-            <div id="3" class="card" onClick="reply_click(this.id)">3</div>
-                
-            <script type="text/javascript">
-            function reply_click(clicked_id)
-            {
-                alert(clicked_id);
-            }
-            </script>
-
-pseudocode:
+*/
+function reply_click(clicked_id){
+    document.getElementById("alerted").innerHTML = clicked_id;
+}
+            
+/*
+pseudocode:'
+/
             if (exists) clicked_id= randomized[x] = true
                 if (value already added skip(Done with array, if exists/contains)) = false
                     variable add 1
