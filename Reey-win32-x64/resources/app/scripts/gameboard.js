@@ -1,5 +1,6 @@
 var level = 0;
 var difficulty = 0;
+var play_array = [];
 function initiate(){
     calc_difficulty();
     console.log(level);
@@ -32,7 +33,6 @@ function clear_playground(){
 }
 
 function randomized(){
-    var play_array = [];
         while(play_array.length < difficulty){
             var randoms = Math.floor(Math.random() * level) + 1;
             if(play_array.indexOf(randoms) === -1){ 
@@ -45,6 +45,12 @@ console.log(play_array);
 concept:
 */
 function reply_click(clicked_id){
+    console.log(clicked_id + "CLICKED ID");
+    if(play_array.indexOf(clicked_id) !== -1){
+        document.getElementById(clicked_id).style.border = "3px solid green";
+    }else{
+        document.getElementById(clicked_id).style.border = "3px solid red";
+    }
     document.getElementById("alerted").innerHTML = clicked_id;
 }
             
