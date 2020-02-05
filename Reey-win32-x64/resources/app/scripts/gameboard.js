@@ -1,4 +1,4 @@
-var level = 0;
+var level = 25;
 var difficulty = 0;
 var play_array = [];
 function initiate(){
@@ -14,7 +14,6 @@ function calc_difficulty(){
     }
     difficulty = (35/100) * level + difficulty;
     difficulty = Math.round(difficulty)
-    console.log(difficulty + "DIFF");
 }
 function make_playground(){
     //Loop out cards on the playground
@@ -26,6 +25,7 @@ function make_playground(){
         div.setAttribute('id', i);
         div.setAttribute('onClick', 'reply_click(this.id)');
         document.getElementById("wrapper").appendChild(div);
+        console.log(i + "ID");
     }
 }
 function clear_playground(){
@@ -39,19 +39,20 @@ function randomized(){
                 play_array.push(randoms);
             }
         }
-console.log(play_array);
 }
 /*
 concept:
 */
 function reply_click(clicked_id){
-    console.log(clicked_id + "CLICKED ID");
-    if(play_array.indexOf(clicked_id) !== -1){
+    console.log("level="+level+"\n difficulty="+difficulty+"\n array="+play_array+"\n clicked_id="+clicked_id);
+
+    if(play_array.includes(clicked_id)){ // Error always return false
         document.getElementById(clicked_id).style.border = "3px solid green";
     }else{
         document.getElementById(clicked_id).style.border = "3px solid red";
     }
     document.getElementById("alerted").innerHTML = clicked_id;
+    
 }
             
 /*
